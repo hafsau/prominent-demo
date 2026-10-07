@@ -1,6 +1,6 @@
 # MedLink portal audit
 
-**▶ Live: [prominent-demos.vercel.app](https://prominent-demos.vercel.app)** · [![CI](https://github.com/hafsau/prominent-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/hafsau/prominent-demo/actions/workflows/ci.yml) · [Portal with findings](https://prominent-demos.vercel.app/portal) · [Backlog](https://prominent-demos.vercel.app/backlog) · [Readout](https://prominent-demos.vercel.app/readout)
+**▶ Live: [prominent-demo.vercel.app](https://prominent-demo.vercel.app)** · [![CI](https://github.com/hafsau/prominent-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/hafsau/prominent-demo/actions/workflows/ci.yml) · [Portal with findings](https://prominent-demo.vercel.app/portal) · [Backlog](https://prominent-demo.vercel.app/backlog) · [Readout](https://prominent-demo.vercel.app/readout)
 
 **The audit, delivered before day one.** An unofficial concept by [Hafsa Usmani](https://hafsausmani.com), built for [Prominent](https://goprominent.com)'s contract **UX/UI Designer, Healthcare Portal Audit** role (Oct 27 – Dec 8, 2026).
 
