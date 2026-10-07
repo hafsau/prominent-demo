@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+/*
+ * Report tokens, from goprominent.com's Elementor kit.
+ *
+ * Prominent: gold #FDBA58 pill buttons, orange #F15E22 hover and accents,
+ * deep teal #013E50 bands, cream #FFF6E8 and mist #F1F6F7 sections, seafoam
+ * #A1C2C7, near-black #231F20 text, 12px cards, weight-800 headings under
+ * uppercase eyebrows. Type is Urbane (Adobe Fonts, licensed); Urbanist, its
+ * closest open cousin, stands in.
+ *
+ * Accessibility adjustments, each a finding we'd raise on our own site:
+ *  - White on gold is 1.70:1. Buttons keep the gold and use #231F20 text (9.58:1).
+ *  - White on orange is 3.30:1. Hover keeps orange with #231F20 text (4.94:1).
+ *  - Orange text on white is 3.30:1, so small orange text uses --orange-ink
+ *    #C13800 (5.48:1), Prominent's own deep orange.
+ */
+:root {
+  color-scheme: light;
+
+  --bg: #ffffff;
+  --mist: #f1f6f7;
+  --cream: #fff6e8;
+  --raised: #ffffff;
+  --line: #d6e0e2;
+  --line-strong: #7a898e;
+
+  --ink: #231f20;
+  --body: #2c2a2b;
+  --muted: #4a5258;
+  --dim: #5b6770;
+
+  --gold: #fdba58;
+  --orange: #f15e22;
+  --orange-ink: #c13800;
+  --teal: #013e50;
+  --teal-2: #06526a;
+  --seafoam: #a1c2c7;
+  --seafoam-soft: #e6f0f1;
+
+  --sev-4: #b42318;
+  --sev-3: #c13800;
+  --sev-2: #8a5a00;
+  --sev-1: #4a5258;
+  --sev-4-soft: #fef3f2;
+  --sev-3-soft: #fff1e8;
+  --sev-2-soft: #fff7e0;
+  --sev-1-soft: #f1f6f7;
+
+  --good: #1f6b3a;
+  --good-soft: #eaf6ec;
+
+  --focus: #06526a;
+  --shadow-card: 0 1px 2px rgb(1 62 80 / 0.06), 0 4px 14px rgb(1 62 80 / 0.06);
+  --shadow-float: 0 18px 40px rgb(1 62 80 / 0.16), 0 3px 8px rgb(1 62 80 / 0.08);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-mist: var(--mist);
+  --color-cream: var(--cream);
+  --color-raised: var(--raised);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-gold: var(--gold);
+  --color-orange: var(--orange);
+  --color-orange-ink: var(--orange-ink);
+  --color-teal: var(--teal);
+  --color-teal-2: var(--teal-2);
+  --color-seafoam: var(--seafoam);
+  --color-seafoam-soft: var(--seafoam-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --font-sans: var(--font-urbanist), "Urbane", ui-sans-serif, system-ui, sans-serif;
+  --shadow-card: var(--shadow-card);
+  --shadow-float: var(--shadow-float);
+}
+
+html {
+  background: var(--bg);
+  scroll-padding-top: 88px;
+}
+body {
+  background: var(--bg);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff;
+  border-radius: 6px;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--orange-ink);
+}
+.on-dark .eyebrow,
+.eyebrow.on-dark {
+  color: var(--gold);
+}
+
+.display {
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.link {
+  color: var(--teal-2);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.overflow-x-auto {
+  position: relative;
+}
+
+@keyframes pin-pop {
+  from {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+.pin {
+  animation: pin-pop 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ---------- Proposed MedLink pattern library (the "after") ----------
+   Scoped to .medlink so the client's redesigned portal never borrows
+   Prominent's brand. Every pairing below is checked in tests. */
+.medlink {
+  --ml-primary: #0b5cad;
+  --ml-primary-dark: #08457f;
+  --ml-ink: #1b2733;
+  --ml-muted: #4d5b69;
+  --ml-line: #c9d3dd;
+  --ml-line-strong: #6f7d8b;
+  --ml-surface: #f4f7fa;
+  --ml-success: #1f6b3a;
+  --ml-success-soft: #e8f5ec;
+  --ml-warn: #8a5a00;
+  --ml-warn-soft: #fff6e0;
+  --ml-error: #b42318;
+  --ml-error-soft: #fdeceb;
+  --ml-focus: #f5a623;
+  font-family: var(--font-public), system-ui, sans-serif;
+  color: var(--ml-ink);
+}
+.medlink :focus-visible {
+  outline: 3px solid var(--ml-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #1b2733;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  @page {
+    size: letter;
+    margin: 0.55in;
+  }
+  .print-break {
+    break-before: page;
+  }
+  .avoid-break {
+    break-inside: avoid;
+  }
+}

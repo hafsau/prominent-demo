@@ -1,0 +1,30 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "npm run start -- --port 3422",
+      "startServerReadyPattern": "Ready",
+      "url": [
+        "http://localhost:3422/",
+        "http://localhost:3422/findings",
+        "http://localhost:3422/tasks",
+        "http://localhost:3422/accessibility",
+        "http://localhost:3422/backlog",
+        "http://localhost:3422/roadmap",
+        "http://localhost:3422/readout",
+        "http://localhost:3422/after/eligibility",
+        "http://localhost:3422/after/documents"
+      ],
+      "numberOfRuns": 1
+    },
+    "assert": {
+      "assertions": {
+        "categories:accessibility": ["error", { "minScore": 1 }],
+        "categories:best-practices": ["error", { "minScore": 0.95 }],
+        "categories:seo": ["error", { "minScore": 0.9 }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.05 }],
+        "categories:performance": ["warn", { "minScore": 0.9 }]
+      }
+    },
+    "upload": { "target": "filesystem", "outputDir": "lighthouse-reports" }
+  }
+}
