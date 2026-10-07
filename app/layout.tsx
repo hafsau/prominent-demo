@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: { default: "MedLink portal audit: a Prominent engagement, delivered early", template: "%s · MedLink portal audit" },
   description:
     "A complete UX/UI audit of a fictional healthcare provider portal, by Hafsa Usmani for Prominent's UX/UI Designer (Healthcare Portal Audit) role: heuristic findings pinned to a live portal, task walkthroughs, IA, forms, Section 508/WCAG 2.1, a prioritized backlog, roadmap and stakeholder readout.",
-  metadataBase: new URL("https://prominent-demo.vercel.app"),
+  metadataBase: new URL("https://prominent-demos.vercel.app"),
 };
 
 export const viewport: Viewport = { themeColor: "#013e50", colorScheme: "light" };
